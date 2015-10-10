@@ -53,7 +53,6 @@ TEST_F(TestSystemInfo, Print_System_Info)
   std::cout << "'GetUsedCompilerNameAndVer()': \"" << g_sysinfo.GetUsedCompilerNameAndVer() << "\"\n";
   std::cout << "'GetManufacturerName()': \"" << g_sysinfo.GetManufacturerName() << "\"\n";
   std::cout << "'GetModelName()': \"" << g_sysinfo.GetModelName() << "\"\n";
-  std::cout << "'IsAppleTV2()': \"" << g_sysinfo.IsAppleTV2() << "\"\n";
   std::cout << "'GetUserAgent()': \"" << g_sysinfo.GetUserAgent() << "\"\n";
 }
 
@@ -252,15 +251,6 @@ TEST_F(TestSystemInfo, GetUserAgent)
 
   EXPECT_NE(std::string::npos, g_sysinfo.GetUserAgent().find(" App_Bitness/")) << "'GetUserAgent()' must contain ' App_Bitness/'";
   EXPECT_NE(std::string::npos, g_sysinfo.GetUserAgent().find(" Version/")) << "'GetUserAgent()' must contain ' Version/'";
-}
-
-TEST_F(TestSystemInfo, IsAppleTV2)
-{
-#ifdef TARGET_DARWIN_IOS_ATV2
-  EXPECT_TRUE(g_sysinfo.IsAppleTV2()) << "'IsAppleTV2()' must return 'true'";
-#else
-  EXPECT_FALSE(g_sysinfo.IsAppleTV2()) << "'IsAppleTV2()' must return 'false'";
-#endif
 }
 
 // FIXME: TARGET_DARWIN_IOS_ATV2?
