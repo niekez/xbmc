@@ -580,6 +580,7 @@
   </Favourites>
   <FullscreenLiveTV>
     <remote>
+      <select>ActivateWindow(pvrosdchannels)</select>
       <left>StepBack</left>
       <right>StepForward</right>
       <up>Up</up>
